@@ -457,7 +457,7 @@ namespace SharpTimer
 
                                 await upsertCommand.ExecuteNonQueryAsync();
                                 Server.NextFrame(() => SharpTimerDebug($"Got player stats from MySQL for {playerName}"));
-                                if (connectMsgEnabled) Server.NextFrame(() => Server.PrintToChatAll($"{msgPrefix}Hráč {ChatColors.Red}{playerName} {ChatColors.White}sa pripojil po {(timesConnected)} krát!"));
+                                if (connectMsgEnabled) Server.NextFrame(() => Server.PrintToChatAll($"{msgPrefix}Hráč {ChatColors.Red}{playerName} {ChatColors.White}sa pripojil {(timesConnected)} krát!"));
                             }
                         }
                         else

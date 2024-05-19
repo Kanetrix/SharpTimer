@@ -289,7 +289,7 @@ namespace SharpTimer
                 int savedPlayerTime = useMySQL ? await GetPreviousPlayerRecordFromDatabase(player, steamId, currentMapNamee!, playerName) : await GetPreviousPlayerRecord(player, steamId, bonusX);
 
                 if (savedPlayerTime == 0)
-                    return getRankImg ? unrankedIcon : "Unranked";
+                    return getRankImg ? unrankedIcon : "Nehodnotený";
 
                 Dictionary<string, PlayerRecord> sortedRecords = useMySQL ? await GetSortedRecordsFromDatabase() : await GetSortedRecords();
 
@@ -302,7 +302,7 @@ namespace SharpTimer
             catch (Exception ex)
             {
                 SharpTimerError($"Error in GetPlayerMapPlacementWithTotal: {ex}");
-                return "Unranked";
+                return "Nehodnotený";
             }
         }
 
@@ -319,7 +319,7 @@ namespace SharpTimer
                     return savedPlayerPoints.ToString();
 
                 if (savedPlayerPoints == 0 || savedPlayerPoints <= minGlobalPointsForRank)
-                    return getRankImg ? unrankedIcon : "Unranked";
+                    return getRankImg ? unrankedIcon : "Nehodnotený";
 
                 Dictionary<string, PlayerPoints> sortedPoints = useMySQL ? await GetSortedPointsFromDatabase() : [];
 
@@ -332,7 +332,7 @@ namespace SharpTimer
             catch (Exception ex)
             {
                 SharpTimerError($"Error in GetPlayerServerPlacement: {ex}");
-                return "Unranked";
+                return "Nehodnotený";
             }
         }
 
@@ -442,7 +442,7 @@ namespace SharpTimer
             catch (Exception ex)
             {
                 SharpTimerError($"Error in CalculateRankStuff: {ex}");
-                return "Unranked";
+                return "Nehodnotený";
             }
         }
 

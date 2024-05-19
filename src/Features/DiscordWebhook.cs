@@ -116,7 +116,7 @@ namespace SharpTimer
                                 new
                                 {
                                     name = "⏳ Vylepšenie času:",
-                                    value = $"{(!isFirstTime ? $"{timeDifference}" : "ˇŽiadne")}",
+                                    value = $"{(!isFirstTime ? $"{timeDifference}" : "Žiadne")}",
                                     inline = true
                                 },
                                 new
